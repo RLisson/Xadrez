@@ -1,4 +1,5 @@
 ﻿using ProjetoXadrez.tabuleiro;
+using ProjetoXadrez.xadrez;
 
 namespace ProjetoXadrez
 {
@@ -7,6 +8,8 @@ namespace ProjetoXadrez
         static void Main(string[] args)
         {
             Tabuleiro tab = new Tabuleiro(8, 8);
+
+            tab.ColocarPeca("", new Posicao(0, 0));
 
             Tela.ImprimirTabuleiro(tab);
         }
