@@ -1,10 +1,14 @@
-﻿namespace ProjetoXadrez
+﻿using ProjetoXadrez.tabuleiro;
+
+namespace ProjetoXadrez
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Tabuleiro tab = new Tabuleiro(8, 8);
+
+            Tela.ImprimirTabuleiro(tab);
         }
     }
 }
