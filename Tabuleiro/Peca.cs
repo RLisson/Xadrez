@@ -1,6 +1,6 @@
 ﻿namespace ProjetoXadrez.tabuleiro
 {
-    internal class Peca
+    internal abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; }
@@ -19,5 +19,12 @@
         {
             QntdMovimentos++;
         }
+        protected bool PodeMover(Posicao pos)
+        {
+            Peca p = Tab.Peca(pos.Linha, pos.Coluna);
+            return p == null || p.Cor != Cor;
+        }
+
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
