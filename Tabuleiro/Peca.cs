@@ -15,5 +15,9 @@
             QntdMovimentos = 0;
         }
 
+        public void IncrementarQntdMovimentos()
+        {
+            QntdMovimentos++;
+        }
     }
 }

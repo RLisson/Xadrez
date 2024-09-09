@@ -7,11 +7,21 @@ namespace ProjetoXadrez
     {
         static void Main(string[] args)
         {
-            Tabuleiro tab = new Tabuleiro(8, 8);
+            PartidaDeXadrez partida = new PartidaDeXadrez();
 
-            tab.ColocarPeca(new Rei(Cor.Preta, tab), new Posicao(0, 0));
+            while (!partida.Terminada)
+            {
+                Console.Clear();
+                Tela.ImprimirTabuleiro(partida.tab);
 
-            Tela.ImprimirTabuleiro(tab);
+                Console.WriteLine();
+                Console.Write("Origem: ");
+                Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+                Console.Write("Destino: ");
+                Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
+
+                partida.ExecutarMovimeto(origem, destino);
+            }
         }
     }
 }
