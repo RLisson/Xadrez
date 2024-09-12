@@ -19,6 +19,11 @@
         {
             QntdMovimentos++;
         }
+
+        public void DecrementarQntdMovimentos()
+        {
+            QntdMovimentos--;
+        }
         protected bool PodeMover(Posicao pos)
         {
             Peca p = Tab.Peca(pos.Linha, pos.Coluna);
